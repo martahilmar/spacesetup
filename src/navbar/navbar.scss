@@ -1,0 +1,132 @@
+
+$color: black;
+$hover: #444;
+
+/**
+  Navigation bar
+ */
+#navbar {
+  position: absolute;
+  top: 15px;
+  z-index: 100;
+
+  left: -145px;
+  width: 210px;
+  transition: left 250ms ease-out, background-color 500ms ease-out;
+
+  .content {
+    opacity: 0;
+    width: 85%;
+    padding: 10px;
+    padding-right: 0;
+    color: $color;
+    /*overflow: hidden;*/
+    background-color: rgba(0,0,0,.25);
+    transition: opacity 250ms ease, width 1s ease;
+  }
+
+  h1 {
+    width: 75%;
+    margin: 5px;
+    padding: 5px;
+    color: $hover;
+    border-bottom: 1px solid $hover;
+  }
+  /*
+  ul {
+    overflow: hidden;
+  }*/
+  ul li a {
+    display: block;
+    margin: 5px;
+    padding: 5px;
+    color: $color;
+    transition: color 250ms;
+    user-select: none;
+  }
+  ul li a:hover {
+    color: $hover;
+  }
+
+  a.open-nav,
+  a.close-nav {
+    float: right;
+    cursor: pointer;
+    padding: 20px;
+  }
+
+  a .nav-icon {
+    width: 36px;
+    height: 2px;
+    position: absolute;
+    transform: translate(-50%);
+    background-color: $color !important;
+    transition: background-color 250ms;
+  }
+
+  a .nav-icon::after,
+  a .nav-icon::before,
+  #to-top a .nav-icon::after,
+  #to-top a .nav-icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    height: 2px !important;
+    background-color: inherit;
+    backface-visibility: hidden;
+    transition: transform 250ms ease;
+  }
+
+  a.open-nav .nav-icon::before { transform: translateY(-10px); }
+  a.open-nav .nav-icon::after  {  transform: translateY(10px); }
+
+  a.open-nav:hover .nav-icon { background-color: $hover !important; }
+  a.open-nav:hover .nav-icon::before { transform: translateY(-12px); }
+  a.open-nav:hover .nav-icon::after  { transform: translateY(12px); }
+
+  a.close-nav .nav-icon { background-color: $hover !important; height: 0px; }
+  a.close-nav .nav-icon::before { transform: rotate(-45deg); }
+  a.close-nav .nav-icon::after  {  transform: rotate(45deg); }
+
+  a.hidden {
+    visibility: hidden;
+  }
+  a.bounce-in {
+    visibility: visible;
+    animation: navbar-bounce 0.6s;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #navbar { width: 350px; left: -220px; }
+  #navbar {
+    .content { width: 250px; }
+    a .nav-icon {
+      width: 85px;
+      height: 12px !important;
+    }
+    ul li a { margin: 10px; }
+    a.open-nav, a.close-nav { padding: 50px; }
+    a.open-nav .nav-icon::before { transform: translateY(-26px); }
+    a.open-nav .nav-icon::after  {  transform: translateY(26px); }
+    a.open-nav:hover .nav-icon::before { transform: translateY(-30px); }
+    a.open-nav:hover .nav-icon::after  { transform: translateY(30px); }
+  }
+}
+
+@keyframes navbar-bounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateX(-50px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1) translateX(50px);
+  }
+  100% {
+    transform: scale(1) translateX(0px);
+  }
+}
