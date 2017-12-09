@@ -2,6 +2,7 @@ export class Navbar {
   constructor() {
     this.options = [
       { href: 'home', link: 'Home'},
+      { href: 'blog', link: 'Blog'},
       { href: 'about', link: 'About'}
     ];
   }
