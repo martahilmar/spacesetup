@@ -1,4 +1,4 @@
-
+$dark_gray: #292929;
 /**
  * The main CSS
  */
@@ -37,9 +37,18 @@ body {
       right: 0.67em;
 
       font-size: 4.4em;
+      font-family: 'Roboto Mono';
+      color: $dark_gray;
       font-weight: normal;
-      font-family: sans-serif;
       text-decoration: underline;
+    }
+
+    ft.light {
+      font-weight: 300;
+    }
+
+    ft.medium {
+      font-weight: 400 !important;
     }
   }
 }

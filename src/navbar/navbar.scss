@@ -1,5 +1,5 @@
 
-$color: black;
+$dark_gray: #292929;
 $hover: #444;
 
 /**
@@ -47,7 +47,7 @@ $hover: #444;
     width: 85%;
     padding: 10px;
     padding-right: 0;
-    color: $color;
+    color: $dark_gray;
     /*overflow: hidden;*/
     background-color: rgba(0,0,0,.25);
     transition: opacity 250ms ease, width 1s ease;
@@ -57,8 +57,11 @@ $hover: #444;
     width: 75%;
     margin: 5px;
     padding: 5px;
+    margin-top: 27px;
+    margin-left: 15px;
     color: $hover;
     border-bottom: 1px solid $hover;
+    font-family: 'Roboto Mono';
   }
   /*
   ul {
@@ -68,10 +71,14 @@ $hover: #444;
     display: block;
     margin: 5px;
     padding: 5px;
-    color: $color;
+    color: $dark_gray;
     transition: color 250ms;
     user-select: none;
+    font-family: 'Roboto Mono';
+    text-decoration: none;
+    font-weight: normal;
   }
+  
   ul li a:hover {
     color: $hover;
   }
@@ -88,7 +95,7 @@ $hover: #444;
     height: 2px;
     position: absolute;
     transform: translate(-50%);
-    background-color: $color !important;
+    background-color: $dark_gray !important;
     transition: background-color 250ms;
   }
 
@@ -115,7 +122,7 @@ $hover: #444;
   a.open-nav:hover .nav-icon::before { transform: translateY(-12px); }
   a.open-nav:hover .nav-icon::after  { transform: translateY(12px); }
 
-  a.close-nav .nav-icon { background-color: $hover !important; height: 0px; }
+  a.close-nav .nav-icon { background-color: $hover !important; height: 0px; left: 50px; }
   a.close-nav .nav-icon::before { transform: rotate(-45deg); }
   a.close-nav .nav-icon::after  {  transform: rotate(45deg); }
 
