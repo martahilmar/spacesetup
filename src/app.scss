@@ -1,23 +1,24 @@
-$dark_gray: #292929;
 /**
  * The main CSS
  */
+
+$dark_gray: #292929;
+
 body {
-  /* background: red; */
+  font-family: 'Roboto Mono';
 }
 
-
-
 #main {
-  height: 1000px;
   width: 1100px;
   margin: 0 auto;
+  padding-bottom: 50px;
   background: #f3f3f3;
 }
 
 #header {
   height: 300px;
   position: relative;
+  background-color: white;
 /*
   display: flex;
   align-items: flex-end;
@@ -37,7 +38,6 @@ body {
       right: 0.67em;
 
       font-size: 4.4em;
-      font-family: 'Roboto Mono';
       color: $dark_gray;
       font-weight: normal;
       text-decoration: underline;

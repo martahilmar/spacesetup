@@ -1,0 +1,68 @@
+
+/* A Full frame text box */
+.frame-text {
+  width: 65%;
+  line-height: 1.5;
+  text-align: justify;
+  font-size: 1.2em;
+  padding: 15px 5px;
+  margin: 125px auto;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+
+  p {
+    margin: 0;
+  }
+}
+
+/* Posts as a list (side to side) */
+ul#posts {
+  margin: 80px;
+  list-style-type: none;
+
+  li:nth-child(odd) {
+    float: right;
+      .textbox {
+        margin-left: -50px;
+      }
+  }
+
+  li:nth-child(even) {
+      .textbox {
+        margin-left: 150px;
+    }
+  }
+
+  .post {
+    clear: both;
+    margin: 80px;
+    min-width: 300px;
+    min-height: 300px;
+    position: relative;
+
+    .scene {
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+      background-color: grey;
+
+      height: 350px;
+      min-width: 350px;
+      min-height: 350px;
+    }
+    .textbox {
+      max-width: 350px;
+      display: inline-block;
+      background: white;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      margin-top: -50px;
+      /* margin-left: -50px; */
+      padding: 10px;
+
+      h2 {
+        margin: 10px 0;
+      }
+    }
+  }
+}

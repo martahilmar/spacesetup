@@ -129,12 +129,7 @@
             "path": "../node_modules/aurelia-testing/dist/amd",
             "main": "aurelia-testing",
             "env": "dev"
-          },
-          {
-            "name": "font-awesome",
-            "path": "../node_modules/font-awesome/css",
-            "main": "font-awesome.css"
-          }        
+          }
         ]
       }
     ]
