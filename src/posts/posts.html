@@ -2,11 +2,15 @@
   <require from="posts/posts.css"></require>
 
   <ul id="posts">
-    <li repeat.for="post of posts" class="post">
-      <div class="scene">
+    <li repeat.for="post of posts" class="post ${post.postType}" id="${post.id}">
+      <div class="text" if.one-time="post.postType === 'frame-text'"
+           innerHTML.bind="post.scene">
+      </div>
+      <div class="scene" if.one-time="post.postType !== 'frame-text'">
         ${post.scene}
       </div>
-      <div class="textbox">
+
+      <div class="textbox ${post.textPosition}" if.one-time="post.header">
         <h2>${post.header}</h2>
         ${post.content}
       </div>
