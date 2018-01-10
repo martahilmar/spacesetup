@@ -17,7 +17,7 @@ export class App {
     // TODO: This isn't working :(
     $('body').on('unload', () => {
       console.log('Saving scroll position');
-      localStorage.setItem('scroll', document.body.scrollTop);
+      localStorage.setItem('scroll', window.scrollY || document.body.scrollTop);
     });
   }
 }

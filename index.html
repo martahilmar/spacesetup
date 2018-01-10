@@ -14,7 +14,7 @@
 
   <script>
       function saveScrollPos() {
-        let pos = document.body.scrollTop;
+        let pos = window.scrollY || document.body.scrollTop;
         console.log("Saving scroll position", pos);
         localStorage.setItem('scroll', pos);
       }

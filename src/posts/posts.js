@@ -8,10 +8,9 @@ export class Posts {
         id: 'Introduction',
         postType: 'frame-text',
         scene:
-        '<p>Project House1.0 started with an idea to move into the outskirts of a busy and fast developing city. Peace and friendliness of people were main reasons, but possibility to have a big garden used for harvesting our own food and growing flowers was Marta\'s big dream.</p>' +
+        '<p>Project House1.0 started with an idea to move into the outskirts of a busy and fast developing city. Peace and friendliness of people were the main reasons, but possibility to have a big garden used for harvesting our own food and growing flowers was Marta\'s big dream.</p>' +
         '<br><p>House1.0, the two-story house is located in the outskirts of northern based city in Denmark, Aalborg. Our wishes were to develop a house that was comfortable, healthy and easy to maintain. In terms of design, we wanted it to be full of light, contemporary and fairly minimal. And in terms of its footprint on the environment, we wanted energy efficient and sustainable house.</p>' +
-        '<br><p>By recommendation of our neighbors we talked with a small building company - Fjorbak Byg. Their focus was on passive housing and individual construction - the qualities we appreciated. We decided that they were our perfect constructor company. They had a contact with Hovaldt architects, who ended up making our architectural drawings.</p>' +
-        '<br><p>We love our house and the whole process and therefore would like to share our project and some stories behind it through this website.</p>'
+        '<br><p>We love our house and the process behind it, therefore this website was born - to share the project, our stories, design ideas, etc.</p>'
       },
       {
         id: 'OurHouse',
@@ -27,9 +26,9 @@ export class Posts {
         id: 'GroundAndLocation',
         postType: 'frame-text',
         scene:
-        '<p>Love for the architecture was the reason we started sketching the ideas for our house down and designing a unique house model. "How to think like an architect?" was a great video which inspired us to think differently. We looked at the grounds position, orientation, and took out the points in design we cared most about.</p>' +
+        '<p>Interest in the architecture made us start sketching down the ideas for our house and designing a unique house model. "How to think like an architect?" was a great video which inspired us to think differently. We looked at the grounds position, orientation, and took out the points in design we mostly cared about.</p>' +
         '<br><p>The ground sits on a small sloping side overlooking the long fields, which turns out to spectacular panorama during the blooming season of rapeseed. Area around the ground is planted with 10-15 m of bushes and trees, which creates good privacy.</p>' +
-        '<br><p>Sketching started by looking at the orientation of the ground. A beautiful view towards the freedom - long fields of rapeseed - is extending from the north to the east corner. This was the view we definitely wanted to bring inside and make it the center of the house.</p>' +
+        '<br><p>Sketching started by looking at the orientation of the ground. A beautiful view towards the freedom is extending from the north to the east corner. This was the view we definitely wanted to bring inside and make it the center of the house.</p>' +
         '<br><p>It was easily decided that the house will be placed in the north side of the ground while the garden will be bathed with the sun on the south side of the ground.</p>'
       },
       {
@@ -44,12 +43,8 @@ export class Posts {
           });
           scene.img = $('<img>')
             .attr('src', 'images/scene2/bubble_diagram.svg')
-            .addClass('full-frame')
-            .css({
-              width: 'auto',
-              height: '100%',
-              transition: '250ms'
-            }).appendTo(scene);
+            .addClass('full-height')
+            .appendTo(scene);
         }/*,
         onScroll: (scene, percent, post) => {
           let X = -50 + percent;
@@ -70,12 +65,8 @@ export class Posts {
           });
           scene.img = $('<img>')
             .attr('src', 'images/scene2/bubble_diagram_1.svg')
-            .addClass('full-frame')
-            .css({
-              width: 'auto',
-              height: '100%',
-              transition: '250ms'
-            }).appendTo(scene);
+            .addClass('full-height')
+            .appendTo(scene);
         }/*,
         onScroll: (scene, percent, post) => {
           let X = 50 - percent;
@@ -101,13 +92,8 @@ export class Posts {
           ].forEach(model => {
             $('<img>')
               .attr('src', 'images/scene1/' + model)
-              .css({
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                transform: 'translateY(-500px)',
-                width: '100%'
-              }).appendTo(scene);
+              .css({ transform: 'translateY(-500px)' })
+              .appendTo(scene);
           });
 
           // Create the animation
@@ -142,7 +128,7 @@ export class Posts {
               anim.pause();
             }
           });
-          this.anim = anim;
+          scene.anim = anim;
         },
         // TODO: Use this together with on('wheel')
         /*pauseScroller: {
@@ -151,14 +137,91 @@ export class Posts {
           onlyDown: true
         },*/
         onScroll: (scene, percent, post) => {
-          // this.anim.seek(this.anim.duration * percent / 100);
+          // scene.anim.seek(scene.anim.duration * percent / 100);
+          let reversed = this.deltaY < 0;
+          percent += reversed ? -10 : 10;
+          scene.anim.playTo = percent * 1.35;
+          if (scene.anim.paused) {
+            scene.anim.play();
+            if (reversed !== scene.anim.reversed) {
+              scene.anim.reverse();
+            }
+          }
+        }
+      },
+      {
+        id: 'GroundOrientation',
+        postType: 'frame-text',
+        scene:
+        '<p>Due to the ground location it was a challenge to place big openings only towards the south side. But living areas are mostly placed towards the south-west so that sunlight can come into the house during the day. This position will also help reduce the energy consumption for heating. In the far north sun from the west will help warming up the big living area in the winter time, while in the warmer summer days when sun escapes further to the west it will be slowly shaded away from the main living areas. During summer when temperatures inside can rise a bit skylight will use it is purpose to allow the heat to escape.</p>'
+      },
+      {
+        id: 'SunPath',
+        postType: 'full-width',
+        onLoad: scene => {
+          [ 'Sun_1_1.png', 'Sun_1_2.png', 'Sun_1_3.png', 'Sun_1_4.png',
+            'Model_1.png', 'Model_2.png', 'Model_3.png', 'Model_4.png',
+            'Model_5.png', 'Model_6.png', 'Model_7.png', 'Model_8.png',
+            'Sun_1_5.png', 'Sun_1_6.png', 'Sun_1_7.png', 'Sun_1_8.png',
+            'Sun_2_1.png', 'Sun_2_2.png', 'Sun_2_3.png', 'Sun_2_4.png',
+            'Sun_2_5.png', 'Sun_2_6.png'
+          ].forEach(model => {
+            let sun = Boolean(model.indexOf('Sun') == 0);
+            let opacity = sun ? 0 : 1;
+            let path = sun ? 'scene3' : 'scene1';
+            let classname = sun ? 'anim' : 'static';
+            $('<img>')
+              .attr('src', 'images/' + path + '/' + model)
+              .addClass(classname)
+              .css({ opacity: opacity })
+              .appendTo(scene);
+          });
+
+          // Create the animation
+          let anim = anime({
+            targets: scene[0].querySelectorAll('img.anim'),
+            easing: 'easeInOutQuad',
+            opacity: 1,
+            delay: (el, i, l) => {
+              let d = (i > 7) ? 500 : 350;
+              if (i > 7) i -= 7; 
+              return i * d - Math.pow(Math.min(i, 4), 2) * 50;
+            },
+            duration: (el, i, l) => {
+              return 1500 - Math.min(i, 4) * 250;
+            },
+            autoplay: false,
+            // loop: true
+            update: function(self) {
+              if (self.playTo) {
+                if ((!self.reversed && self.progress > self.playTo)
+                  || (self.reversed && self.progress < self.playTo)) {
+                  self.pause();
+                }
+              }
+            }
+          });
+          scene.on('click', this, (e) => {
+            if (anim.completed || anim.progress > 85) {
+              anim.playTo = 0;
+              anim.restart();
+            } else if (anim.paused) {
+              anim.play();
+            } else {
+              anim.pause();
+            }
+          });
+          scene.anim = anim;
+        },
+        onScroll: (scene, percent, post) => {
+          // scene.anim.seek(scene.anim.duration * percent / 100);
           let reversed = this.deltaY < 0;
           percent += reversed ? -25 : 25;
-          this.anim.playTo = percent * 1.35;
-          if (this.anim.paused) {
-            this.anim.play();
-            if (reversed !== this.anim.reversed) {
-              this.anim.reverse();
+          scene.anim.playTo = percent * 1.35;
+          if (scene.anim.paused) {
+            scene.anim.play();
+            if (reversed !== scene.anim.reversed) {
+              scene.anim.reverse();
             }
           }
         }
@@ -217,7 +280,7 @@ export class Posts {
 
   handleScrollEvent(e, scrollTop) {
     let self = e.data;
-    let top = scrollTop || document.body.scrollTop;
+    let top = scrollTop || window.scrollY || document.body.scrollTop;
     // const st = window.pageYOffset || document.documentElement.scrollTop;
     let bottom = top + window.innerHeight;
     let winHeight = bottom - top;

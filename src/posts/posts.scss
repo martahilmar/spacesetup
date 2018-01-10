@@ -36,6 +36,12 @@ img.full-frame {
   right: 0;
 }
 
+img.full-height {
+  position: relative;
+  height: 100%;
+  width: auto;
+}
+
 img.grayed {
   filter: gray;
   filter: grayscale(1);
@@ -110,6 +116,13 @@ ul#posts {
       height: 350px;
       min-width: 350px;
       min-height: 350px;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
     }
 
     .textbox.hide {
