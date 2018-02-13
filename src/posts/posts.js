@@ -5,12 +5,16 @@ export class Posts {
   constructor() {
     this.posts = [
       {
-        id: 'Introduction',
-        postType: 'frame-text',
+        id: 'About',
+        postType: 'about-text',
         scene:
-        '<p>Project House1.0 started with an idea to move into the outskirts of a busy and fast developing city. Peace and friendliness of people were the main reasons, but possibility to have a big garden used for harvesting our own food and growing flowers was Marta\'s big dream.</p>' +
-        '<br><p>House1.0, the two-story house is located in the outskirts of northern based city in Denmark, Aalborg. Our wishes were to develop a house that was comfortable, healthy and easy to maintain. In terms of design, we wanted it to be full of light, contemporary and fairly minimal. And in terms of its footprint on the environment, we wanted energy efficient and sustainable house.</p>' +
-        '<br><p>We love our house and the process behind it, therefore this website was born - to share the project, our stories, design ideas, etc.</p>'
+        '<p>ABOUT</p>'
+      },
+      {
+        id: 'Intro',
+        postType: 'intro-text',
+        scene:
+        '<p>SpaceSetup is a platform dedicated to the creative process of designing our first house, building steps, as well as tips and tricks in the interior design and DIY projects.</p>'
       },
       {
         id: 'OurHouse',
@@ -23,18 +27,30 @@ export class Posts {
         }
       },
       {
+        id: 'ProjectHouse1.0',
+        postType: 'frame-text',
+        scene:
+        '<p>Project House1.0 started with an idea to move into the outskirts of a busy and fast developing city. Peace and friendliness of people were the main reasons, but possibility to have a big garden used for harvesting our own food and growing flowers was Marta\'s big dream.</p>' +
+        '<br><p>House1.0, the two-story house is located in the outskirts of northern based city in Denmark, Aalborg. Our wish was to develop a house that was comfortable, healthy and easy to maintain. In terms of design, we wanted it to be full of light, contemporary and fairly minimal. And in terms of its footprint on the environment, we wanted energy efficient and sustainable house.</p>'
+      },
+      {
+        id: 'GroundAndLocationQuot',
+        postType: 'quoted-text',
+        scene:
+        '<p class="center"><quot>&ldquo;</quot><br><i>&ldquo;</i> <span>How to think like  an architect?</span> <i>&bdquo;</i></p>'
+      },
+      {
         id: 'GroundAndLocation',
         postType: 'frame-text',
         scene:
-        '<p>Interest in the architecture made us start sketching down the ideas for our house and designing a unique house model. "How to think like an architect?" was a great video which inspired us to think differently. We looked at the grounds position, orientation, and took out the points in design we mostly cared about.</p>' +
-        '<br><p>The ground sits on a small sloping side overlooking the long fields, which turns out to spectacular panorama during the blooming season of rapeseed. Area around the ground is planted with 10-15 m of bushes and trees, which creates good privacy.</p>' +
-        '<br><p>Sketching started by looking at the orientation of the ground. A beautiful view towards the freedom is extending from the north to the east corner. This was the view we definitely wanted to bring inside and make it the center of the house.</p>' +
-        '<br><p>It was easily decided that the house will be placed in the north side of the ground while the garden will be bathed with the sun on the south side of the ground.</p>'
+        '<p>Interest in the architecture made us start sketching down the ideas for our house and designing a unique house model. "How to think like an architect?" was a great video which inspired us to think differently. We started looking more detialed into the grounds\'s position, orientation, and we underlined our own design wishes.</p>' +
+        '<br><p>The ground sits on a small sloping side overlooking the long fields, which turns out to spectacular panorama during the blooming season of rapeseed. This was the view we definitely wanted to bring inside and make it the center of the house. Area around the ground is planted with 10-15 m of bushes and trees, which creates good privacy. The bases for the first draft of the room distribution were established.</p>'
       },
       {
         id: 'BubbleDiagramGroundFloor',
-        header: 'Ground floor sketch',
+        header: 'GROUND FLOOR SKETCH',
         content: 'TODO: Write some text...',
+        postType: 'right',
         textPosition: 'bottom-right',
         onLoad: scene => {
           scene.css({
@@ -45,18 +61,13 @@ export class Posts {
             .attr('src', 'images/scene2/bubble_diagram.svg')
             .addClass('full-height')
             .appendTo(scene);
-        }/*,
-        onScroll: (scene, percent, post) => {
-          let X = -50 + percent;
-          scene.img.css({
-            transform: 'translateX(' + X + 'px)'
-          });
-        }*/
+        }
       },
       {
         id: 'BubbleDiagramFirstFloor',
         header: 'First floor sketch',
         content: 'TODO: Write some text...',
+        postType: 'left',
         textPosition: 'bottom-left',
         onLoad: scene => {
           scene.css({
@@ -67,19 +78,19 @@ export class Posts {
             .attr('src', 'images/scene2/bubble_diagram_1.svg')
             .addClass('full-height')
             .appendTo(scene);
-        }/*,
-        onScroll: (scene, percent, post) => {
-          let X = 50 - percent;
-          scene.img.css({
-            transform: 'translateX(' + X + 'px)'
-          });
-        }*/
+        }
+      },
+      {
+        id: 'ContainerDesignQuot',
+        postType: 'quoted-text',
+        scene:
+        '<p class="center"><quot>&ldquo;</quot><br><i>&ldquo;</i> <span>Long and simple shaped containers were a reference to our desire for big-open areas, lots of light and minimal design.</span> <i>&bdquo;</i></p>'
       },
       {
         id: 'ContainerDesign',
         postType: 'frame-text',
         scene:
-        '<p>Looking at the world recognized architecture we got our eyes on one specific design. It was a shipping container design. Long and simple shaped shipping containers were a reference to our desire for big-open areas, lots of light and minimal design.</p>' +
+        '<p>Looking at the world recognized architecture we got cought onto one specific design. It was a shipping container design. Long and simple shaped containers were a reference to our desire for big-open areas, lots of light and minimal design.</p>' +
         '<br><p>We were looking into hosting an open-concept design, where kitchen, dinning and living room, plus small office will create one common area. As we are both software developers and food enthusiasts, often innovative minds we actually spend most of the time working together on our daily "projects". Therefore "open concept" complements our lifestyles perfectly.</p>' +
         '<br><p>The form of the house was just created. Long boxes extending from the view on one side all the way to the garden on the other side. The house splits in two distinct uses. The ground floor is maintaining the spaces visually open and hosting more public uses of the interior - the kitchen, living and dining room. First floor is a private area hosting the bedrooms.</p>'
       },
@@ -87,11 +98,170 @@ export class Posts {
         id: 'Sections',
         postType: 'full-width',
         onLoad: scene => {
-          [ 'Model_1.png', 'Model_2.png', 'Model_3.png', 'Model_4.png',
+          let models = [ 'Model_0.png', 'Model_1.png', 'Model_2.png', 'Model_3.png', 'Model_4.png',
             'Model_5.png', 'Model_6.png', 'Model_7.png', 'Model_8.png'
-          ].forEach(model => {
+          ];
+          models.forEach(model => {
             $('<img>')
               .attr('src', 'images/scene1/' + model)
+              .css({ transform: 'translateY(-625px)' })
+              .appendTo(scene);
+          });
+
+          // Create the animation
+          let anim = anime({
+            targets: scene[0].querySelectorAll('img'),
+            easing: 'easeInOutQuad',
+            translateY: -75,
+            delay: (el, i, l) => {
+              return 250 * i - 150 * i;
+            },
+            duration: (el, i, l) => {
+              let duration = 800 - Math.min(i, 4) * 50;
+              console.log('Duration', i, duration);
+              return duration;
+            },
+            autoplay: false,
+            // loop: true
+            update: self => {
+              if (self.playTo) {
+                if ((!self.reversed && self.progress > self.playTo)
+                  || (self.reversed && self.progress < self.playTo)) {
+                  self.pause();
+                }
+              }
+            }
+          });
+          scene.on('click', this, (e) => {
+            if (anim.completed || anim.progress > 85) {
+              anim.playTo = 0;
+              anim.restart();
+            } else if (anim.paused) {
+              anim.play();
+            } else {
+              anim.pause();
+            }
+          });
+          scene.anim = anim;
+        },
+        // TODO: Use this together with on('wheel')
+        /*pauseScroller: {
+          from: 45,
+          to: 100,
+          onlyDown: true
+        },*/
+        onScroll: (scene, percent, post) => {
+          // scene.anim.seek(scene.anim.duration * percent / 100);
+          if (percent < 15) anime.paused;
+          if (percent > 50) percent = 100;
+          let reversed = this.deltaY < 0;
+          // percent += reversed ? -10 : 10;
+          console.log("Percent: " + percent);
+          scene.anim.playTo = percent;
+          if (scene.anim.paused) {
+            scene.anim.play();
+            if (reversed !== scene.anim.reversed) {
+              scene.anim.reverse();
+            }
+          }
+        }
+      },
+      {
+        id: 'SunPathQuot',
+        postType: 'quoted-text',
+        scene:
+        '<p class="center"><i>&ldquo;</i> <span>House was placed in the north side of the ground while the garden is bathed in the southern sun.</span> <i>&bdquo;</i></p>'
+      },
+      {
+        id: 'SunPathText',
+        postType: 'frame-text',
+        scene:
+        '<p>Position of the ground dedicated the orientation of the house and distribution of the rooms. House was placed in the north side of the ground while the garden is bathed in the southern sun. Due to our location, in the far north, path of the sun shortens significantly during the winter. This way south-facing walls and windows receive more solar radiation in winter than in summer. Due to the cold winters the house will this way benefit by letting low angle winter sun in, which will help accumulate heat in the thermal mass inside the house. High angle summer sun will be excluded with horizonal shadings on some parts of the south facing facade.</p>'
+      },
+      {
+        id: 'SunPath',
+        postType: 'full-width',
+        onLoad: scene => {
+          [ 'Model_sun_window.png', 'Sun_0.png',
+            'Sun_1_1.png', 'Sun_1_2.png', 'Sun_1_3.png', 'Sun_1_4.png',
+            'Sun_1_5.png', 'Sun_1_6.png', 'Sun_1_7.png', 'Sun_1_8.png',
+            'Sun_2_1.png', 'Sun_2_2.png', 'Sun_2_3.png', 'Sun_2_4.png',
+            'Sun_2_5.png', 'Sun_2_6.png'
+          ].forEach(model => {
+            let sun = Boolean(model.indexOf('Sun') == 0);
+            let opacity = sun ? 0 : 1;
+            let path = sun ? 'scene3' : 'scene1';
+            let classname = sun ? 'anim' : 'static';
+            $('<img>')
+              .attr('src', 'images/scene3/' + model)
+              .addClass(classname)
+              .css({ opacity: opacity })
+              .appendTo(scene);
+          });
+
+          // Create the animation
+          let anim = anime({
+            targets: scene[0].querySelectorAll('img.anim'),
+            easing: 'easeInOutQuad',
+            opacity: 1,
+            delay: (el, i, l) => {
+              let d = (i > 7) ? 500 : 350;
+              if (i > 7) i -= 7; 
+              return i * d - Math.pow(Math.min(i, 4), 2) * 50;
+            },
+            duration: (el, i, l) => {
+              return 1500 - Math.min(i, 4) * 250;
+            },
+            autoplay: false,
+            // loop: true
+            update: function(self) {
+              if (self.playTo) {
+                if ((!self.reversed && self.progress > self.playTo)
+                  || (self.reversed && self.progress < self.playTo)) {
+                  self.pause();
+                }
+              }
+            }
+          });
+          scene.on('click', this, (e) => {
+            if (anim.completed || anim.progress > 85) {
+              anim.playTo = 0;
+              anim.restart();
+            } else if (anim.paused) {
+              anim.play();
+            } else {
+              anim.pause();
+            }
+          });
+          scene.anim = anim;
+        },
+        onScroll: (scene, percent, post) => {
+          // scene.anim.seek(scene.anim.duration * percent / 100);
+          let reversed = this.deltaY < 0;
+          percent += reversed ? -25 : 25;
+          scene.anim.playTo = percent * 1.35;
+          if (scene.anim.paused) {
+            scene.anim.play();
+            if (reversed !== scene.anim.reversed) {
+              scene.anim.reverse();
+            }
+          }
+        }
+      },
+      {
+        id: 'WindowPlacementText',
+        postType: 'frame-text',
+        scene:
+        '<p>Due to the ground\'s location it was a challenge to place big openings only towards the south side. Long living space got most of the window area towards south/west accumulate the heat during the day, but also some towards north-east to allow indirect light to steady stream in together with picturless landscape. A very important point in our design was a skylight located in the center of the house to allow heat to escape in the warmer summer days and to naturaly ventilate the areas.</p>'
+      },
+      {
+        id: 'WindowPlacement',
+        postType: 'full-width',
+        onLoad: scene => {
+          [ 'Model_bw.png', 'Model_window.png'
+          ].forEach(model => {
+            $('<img>')
+              .attr('src', 'images/scene4/' + model)
               .css({ transform: 'translateY(-500px)' })
               .appendTo(scene);
           });
@@ -140,83 +310,6 @@ export class Posts {
           // scene.anim.seek(scene.anim.duration * percent / 100);
           let reversed = this.deltaY < 0;
           percent += reversed ? -10 : 10;
-          scene.anim.playTo = percent * 1.35;
-          if (scene.anim.paused) {
-            scene.anim.play();
-            if (reversed !== scene.anim.reversed) {
-              scene.anim.reverse();
-            }
-          }
-        }
-      },
-      {
-        id: 'GroundOrientation',
-        postType: 'frame-text',
-        scene:
-        '<p>Due to the ground location it was a challenge to place big openings only towards the south side. But living areas are mostly placed towards the south-west so that sunlight can come into the house during the day. This position will also help reduce the energy consumption for heating. In the far north sun from the west will help warming up the big living area in the winter time, while in the warmer summer days when sun escapes further to the west it will be slowly shaded away from the main living areas. During summer when temperatures inside can rise a bit skylight will use it is purpose to allow the heat to escape.</p>'
-      },
-      {
-        id: 'SunPath',
-        postType: 'full-width',
-        onLoad: scene => {
-          [ 'Sun_1_1.png', 'Sun_1_2.png', 'Sun_1_3.png', 'Sun_1_4.png',
-            'Model_1.png', 'Model_2.png', 'Model_3.png', 'Model_4.png',
-            'Model_5.png', 'Model_6.png', 'Model_7.png', 'Model_8.png',
-            'Sun_1_5.png', 'Sun_1_6.png', 'Sun_1_7.png', 'Sun_1_8.png',
-            'Sun_2_1.png', 'Sun_2_2.png', 'Sun_2_3.png', 'Sun_2_4.png',
-            'Sun_2_5.png', 'Sun_2_6.png'
-          ].forEach(model => {
-            let sun = Boolean(model.indexOf('Sun') == 0);
-            let opacity = sun ? 0 : 1;
-            let path = sun ? 'scene3' : 'scene1';
-            let classname = sun ? 'anim' : 'static';
-            $('<img>')
-              .attr('src', 'images/' + path + '/' + model)
-              .addClass(classname)
-              .css({ opacity: opacity })
-              .appendTo(scene);
-          });
-
-          // Create the animation
-          let anim = anime({
-            targets: scene[0].querySelectorAll('img.anim'),
-            easing: 'easeInOutQuad',
-            opacity: 1,
-            delay: (el, i, l) => {
-              let d = (i > 7) ? 500 : 350;
-              if (i > 7) i -= 7; 
-              return i * d - Math.pow(Math.min(i, 4), 2) * 50;
-            },
-            duration: (el, i, l) => {
-              return 1500 - Math.min(i, 4) * 250;
-            },
-            autoplay: false,
-            // loop: true
-            update: function(self) {
-              if (self.playTo) {
-                if ((!self.reversed && self.progress > self.playTo)
-                  || (self.reversed && self.progress < self.playTo)) {
-                  self.pause();
-                }
-              }
-            }
-          });
-          scene.on('click', this, (e) => {
-            if (anim.completed || anim.progress > 85) {
-              anim.playTo = 0;
-              anim.restart();
-            } else if (anim.paused) {
-              anim.play();
-            } else {
-              anim.pause();
-            }
-          });
-          scene.anim = anim;
-        },
-        onScroll: (scene, percent, post) => {
-          // scene.anim.seek(scene.anim.duration * percent / 100);
-          let reversed = this.deltaY < 0;
-          percent += reversed ? -25 : 25;
           scene.anim.playTo = percent * 1.35;
           if (scene.anim.paused) {
             scene.anim.play();

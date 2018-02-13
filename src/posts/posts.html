@@ -3,10 +3,10 @@
 
   <ul id="posts">
     <li repeat.for="post of posts" class="post ${post.postType}" id="${post.id}">
-      <div class="text" if.one-time="post.postType === 'frame-text'"
+      <div class="text" if.one-time="['about-text', 'intro-text', 'frame-text', 'quoted-text'].includes(post.postType)"
            innerHTML.bind="post.scene">
       </div>
-      <div class="scene" if.one-time="post.postType !== 'frame-text'">
+      <div class="scene" if.one-time="!['about-text', 'intro-text', 'frame-text', 'quoted-text'].includes(post.postType)">
         ${post.scene}
       </div>
 
