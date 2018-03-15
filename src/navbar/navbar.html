@@ -1,28 +1,13 @@
-<template>
+<template bindable="router">
   <require from="navbar/navbar.css"></require>
   <!-- TODO: Make it work for aurelia.json
   <require from="font-awesome.css"></require>
   -->
-
-  <!-- , backgroundColor: closed ? bgColor : 'transparent' -->
-	<div id="navbar" ref="nav" style.bind="{left: closed ? 0 : left}">
-    <a class.bind="closed ? 'close-nav' : 'open-nav'" click.delegate="toggle()">
-      <span class="nav-icon"></span>
-    </a>
-    <div class="content" style.bind="{opacity: closed ? 1 : 0}" >
-      <h1>Menu</h1>
-      <ul>
-        <li repeat.for="opt of options">
-          <a href="#${opt.href}">${opt.link}</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Social Icons -->
-  <div id="social-icons">
-    <a href="#" target="_blank" class="fa fa-pinterest"></a>
-    <a href="https://www.instagram.com/spacesetup" target="_blank" class="fa fa-instagram"></a>
-    <a href="https://www.facebook.com/spacesetup" target="_blank" class="fa fa-facebook"></a>
-  </div>
+  <nav>
+    <ul>
+      <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
+        <a href.bind="row.href">${row.title}</a>
+      </li>
+    </ul>
+  </nav>
 </template>

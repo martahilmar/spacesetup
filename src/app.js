@@ -1,6 +1,27 @@
+import { autoinject } from 'aurelia-framework';
+import { Router, RouterConfiguration, RouteConfig, NavModel } from 'aurelia-router';
+
+@autoinject()
 export class App {
+  configureRouter(config, router) {
+    config.title = 'SpaceSetup';
+    config.map([
+      {route: ['', 'home'], name: 'home', moduleId: 'posts/posts', nav: true, title: 'Home'},
+      {route: 'about', name: 'about', moduleId: 'about/about', nav: true, title: 'You & Me'}
+    ]);
+    this.router = router;
+  }
+  
   constructor() {
     this.name = 'SpaceSetup';
+  }
+
+  toggleNav(e) {
+    if (!this.left) {
+      this.left = window.getComputedStyle(document.getElementById('navbar')).left;
+      this.bgColor = window.getComputedStyle(document.querySelector('#navbar .content')).backgroundColor;
+    }
+    this.navClosed = !this.navClosed;
   }
 
   initScrollReveal() {

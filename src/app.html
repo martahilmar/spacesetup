@@ -1,17 +1,35 @@
 <template>
   <require from="app.css"></require>
   <require from="posts/posts.css"></require>
-  <require from="navbar/navbar"></require>
+  <require from="navbar/navbar.html"></require>
   <require from="posts/posts"></require>
   
   <div id="main">
     <div id="header">
-      <navbar></navbar>
+      <!-- , backgroundColor: closed ? bgColor : 'transparent' -->
+      <div id="navbar" ref="nav" style.bind="{left: navClosed ? 0 : left}">
+        <a class.bind="navClosed ? 'close-nav' : 'open-nav'" click.delegate="toggleNav()">
+          <span class="nav-icon"></span>
+        </a>
+        <div class="content" style.bind="{opacity: navClosed ? 1 : 0}" >
+          <h1>Menu</h1>
+          <navbar router.bind="router" class="primary-navigation"></navbar>
+        </div>
+      </div>
+      
+      <!-- Social Icons -->
+      <div id="social-icons">
+        <a href="https://www.pinterest.dk/martahilmar/spacesetup/" target="_blank" class="fa fa-pinterest"></a>
+        <a href="https://www.instagram.com/spacesetup" target="_blank" class="fa fa-instagram"></a>
+        <a href="https://www.facebook.com/spacesetup" target="_blank" class="fa fa-facebook"></a>
+      </div>
+
+      <!-- Headline -->
       <div class="bg">
         <h1><ft class="light">space</ft><ft class="medium">setup</ft></h1>
       </div>
     </div>
 
-    <posts></posts>
+    <router-view></router-view>
     <!--  scrolltop.bind="scrollTop" scroll.trigger="handleScrollEvent($event)" -->
 </template>

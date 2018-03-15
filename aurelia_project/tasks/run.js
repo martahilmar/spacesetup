@@ -13,6 +13,7 @@ let serve = gulp.series(
       online: false,
       open: false,
       port: 9000,
+      https: true,
       logLevel: 'silent',
       server: {
         baseDir: [project.platform.baseDir],

@@ -21,7 +21,7 @@ export class Posts {
         postType: 'full-width',
         onLoad: scene => {
           $('<img>')
-            .attr('src', 'images/House_1.png')
+            .attr('src', 'images/House_E.png')
             .addClass('full-frame grayed')
             .appendTo(scene);
         }
@@ -30,9 +30,19 @@ export class Posts {
         id: 'ProjectHouse1.0',
         postType: 'frame-text',
         scene:
-        '<p>Project House1.0 started with an idea to move into the outskirts of a busy and fast developing city. Peace and friendliness of people were the main reasons, but possibility to have a big garden used for harvesting our own food and growing flowers was Marta\'s big dream.</p>' +
+        '<p>Project House1.0 started with an idea to move into the outskirts of a busy and fast developing city. Peace and friendliness of people were the main reasons, but possibility to have a big garden used for harvesting our own food and creating flowerfull garden was the big dream.</p>' +
         '<br><p>House1.0, the two-story house is located in the outskirts of northern based city in Denmark, Aalborg. Our wish was to develop a house that was comfortable, healthy and easy to maintain. In terms of design, we wanted it to be full of light, contemporary and fairly minimal. And in terms of its footprint on the environment, we wanted energy efficient and sustainable house.</p>'
       },
+      {
+        id: 'OurHouse1',
+        postType: 'full-width',
+        onLoad: scene => {
+          $('<img>')
+            .attr('src', 'images/House_W.png')
+            .addClass('full-frame grayed')
+            .appendTo(scene);
+        }
+      },      
       {
         id: 'GroundAndLocationQuot',
         postType: 'quoted-text',
@@ -43,14 +53,14 @@ export class Posts {
         id: 'GroundAndLocation',
         postType: 'frame-text',
         scene:
-        '<p>Interest in the architecture made us start sketching down the ideas for our house and designing a unique house model. "How to think like an architect?" was a great video which inspired us to think differently. We started looking more detialed into the grounds\'s position, orientation, and we underlined our own design wishes.</p>' +
-        '<br><p>The ground sits on a small sloping side overlooking the long fields, which turns out to spectacular panorama during the blooming season of rapeseed. This was the view we definitely wanted to bring inside and make it the center of the house. Area around the ground is planted with 10-15 m of bushes and trees, which creates good privacy. The bases for the first draft of the room distribution were established.</p>'
+        '<p>Interest in the architecture made us start sketching down the ideas for our house and designing a unique house model. "How to think like an architect?" was a great video which inspired us to think differently. We started looking more detialed into the grounds\'s position, orientation and weather conditions.</p>' +
+        '<br><p>The ground sits on a small sloping side overlooking the long fields, which turns out to spectacular panorama during the blooming season of rapeseed. This was the view we definitely wanted to bring inside and make it the center of the house. Area around the ground is planted with 10-15 m of bushes and trees, which creates good privacy. South side of the ground would be a perfect location for the terrace and garden. These small decisions were enough to establish the basis of the first draft.</p>'
       },
       {
         id: 'BubbleDiagramGroundFloor',
-        header: 'GROUND FLOOR SKETCH',
-        content: 'TODO: Write some text...',
-        postType: 'right',
+        header: 'SKETCH OF THE GROUND FLOOR',
+        content: 'Rooms with the day time activity and easy access to the garden are placed on the ground floor.',
+        postType: 'left',
         textPosition: 'bottom-right',
         onLoad: scene => {
           scene.css({
@@ -65,9 +75,9 @@ export class Posts {
       },
       {
         id: 'BubbleDiagramFirstFloor',
-        header: 'First floor sketch',
-        content: 'TODO: Write some text...',
-        postType: 'left',
+        header: 'SKETCH OF THE FIRST FLOOR',
+        content: 'Sleeping areas will be placed on the first floor.',
+        postType: 'right',
         textPosition: 'bottom-left',
         onLoad: scene => {
           scene.css({
@@ -90,7 +100,7 @@ export class Posts {
         id: 'ContainerDesign',
         postType: 'frame-text',
         scene:
-        '<p>Looking at the world recognized architecture we got cought onto one specific design. It was a shipping container design. Long and simple shaped containers were a reference to our desire for big-open areas, lots of light and minimal design.</p>' +
+        '<p>Looking at the world recognized architecture we got an eye on one specific design. It was a shipping container design. Long and simple shaped containers were a reference to our desire for big-open areas, lots of light and minimal design.</p>' +
         '<br><p>We were looking into hosting an open-concept design, where kitchen, dinning and living room, plus small office will create one common area. As we are both software developers and food enthusiasts, often innovative minds we actually spend most of the time working together on our daily "projects". Therefore "open concept" complements our lifestyles perfectly.</p>' +
         '<br><p>The form of the house was just created. Long boxes extending from the view on one side all the way to the garden on the other side. The house splits in two distinct uses. The ground floor is maintaining the spaces visually open and hosting more public uses of the interior - the kitchen, living and dining room. First floor is a private area hosting the bedrooms.</p>'
       },
@@ -176,7 +186,7 @@ export class Posts {
         id: 'SunPathText',
         postType: 'frame-text',
         scene:
-        '<p>Position of the ground dedicated the orientation of the house and distribution of the rooms. House was placed in the north side of the ground while the garden is bathed in the southern sun. Due to our location, in the far north, path of the sun shortens significantly during the winter. This way south-facing walls and windows receive more solar radiation in winter than in summer. Due to the cold winters the house will this way benefit by letting low angle winter sun in, which will help accumulate heat in the thermal mass inside the house. High angle summer sun will be excluded with horizonal shadings on some parts of the south facing facade.</p>'
+        '<p>Position of the ground dedicated the orientation of the house and distribution of the rooms. House was placed in the north side of the ground while the garden is bathed in the southern sun. Due to our location, in the far north, path of the sun shortens significantly during the winter. South-facing walls and windows receive more solar radiation in winter than in summer. Due to the cold winters the house will this way benefit by letting low angle winter sun in, which will help accumulate heat in the thermal mass inside the house. High angle summer sun will be excluded with horizonal shadings on some parts of the south facing facade.</p>'
       },
       {
         id: 'SunPath',
@@ -258,7 +268,7 @@ export class Posts {
         id: 'WindowPlacement',
         postType: 'full-width',
         onLoad: scene => {
-          [ 'Model_bw.png', 'Model_window.png'
+          [ 'Model_window_1.png', 'Model_bw.png', 'Model_window.png',
           ].forEach(model => {
             $('<img>')
               .attr('src', 'images/scene4/' + model)
@@ -272,7 +282,7 @@ export class Posts {
             easing: 'easeInOutQuad',
             translateY: -50,
             delay: (el, i, l) => {
-              return i * 500 - Math.pow(Math.min(i, 4), 2) * 50;
+              return i * 500 - Math.pow(Math.min(i, 4), 2) * 20;
             },
             duration: (el, i, l) => {
               return 1500 - Math.min(i, 4) * 250;
@@ -309,7 +319,7 @@ export class Posts {
         onScroll: (scene, percent, post) => {
           // scene.anim.seek(scene.anim.duration * percent / 100);
           let reversed = this.deltaY < 0;
-          percent += reversed ? -10 : 10;
+          percent += reversed ? -20 : 20;
           scene.anim.playTo = percent * 1.35;
           if (scene.anim.paused) {
             scene.anim.play();
