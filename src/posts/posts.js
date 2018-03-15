@@ -205,7 +205,10 @@ export class Posts {
             $('<img>')
               .attr('src', 'images/scene3/' + model)
               .addClass(classname)
-              .css({ opacity: opacity })
+              .css({
+                opacity: opacity,
+                transform: 'translateY(-50px)'
+              })
               .appendTo(scene);
           });
 
