@@ -1,19 +1,20 @@
 <template>
-    <require from="posts/posts.css"></require>
-    <ul id="posts">
-        <li repeat.for="post of posts" class="post ${post.postType}" id="${post.id}">
-          <div class="text" if.one-time="['about-text', 'intro-text', 'frame-text', 'quoted-text'].includes(post.postType)"
-               innerHTML.bind="post.scene">
-          </div>
-          <div class="scene" if.one-time="!['about-text', 'intro-text', 'frame-text', 'quoted-text'].includes(post.postType)">
-            ${post.scene}
-          </div>
-    
-          <div class="textbox ${post.textPosition}" if.one-time="post.header">
-            <h2>${post.header}</h2>
-            ${post.content}
-          </div>
-        </li>
-      </ul>
-    <div class="elfsight-app-8c459ec2-fc58-4451-ab4d-2fb9630395c4"></div>
+  <require from="posts/posts.css"></require>
+  <ul id="posts">
+      <li repeat.for="post of posts" class="post ${post.postType}" id="${post.id}">
+        <div class="text" if.one-time="['about-text', 'intro-text', 'frame-text', 'quoted-text'].includes(post.postType)"
+              innerHTML.bind="post.scene">
+        </div>
+        <div class="scene" if.one-time="!['about-text', 'intro-text', 'frame-text', 'quoted-text'].includes(post.postType)">
+          ${post.scene}
+        </div>
+  
+        <div class="textbox ${post.textPosition}" if.one-time="post.header">
+          <h2>${post.header}</h2>
+          ${post.content}
+        </div>
+      </li>
+    </ul>
+    <iframe src="//lightwidget.com/widgets/4c890cd92bdc5a9fbaf48e344a11c178.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
 </template>
+

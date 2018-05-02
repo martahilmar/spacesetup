@@ -5,7 +5,8 @@
 $dark_gray: #292929;
 
 body {
-  font-family: 'Roboto Mono';
+  font-family: 'Dosis';
+  line-height: 1.7;
 }
 
 #main {
@@ -19,6 +20,7 @@ body {
   height: 300px;
   position: relative;
   background-color: white;
+  font-family: 'Roboto Mono';
 /*
   display: flex;
   align-items: flex-end;

@@ -8,13 +8,13 @@ export class About {
               id: 'About Us',
               postType: 'about-text',
               scene:
-              '<p>YOU & ME</p>'
+              '<p>HE & SHE</p>'
             },
             {
               id: 'Intro',
               postType: 'intro-text',
               scene:
-              '<p>He is Dennis and I am Marta. We are a couple that loves small adventures and little innovation. Our latest project is our house. We designed it from bottom to top and would love to share our process with you. Apart from that we are both software engineers, food enthusiasts and we LOVE traveling. Hope you will enjoy reading the story about our house project.</p>'
+              '<p>He is Dennis and she is Marta. We are a couple that loves small adventures and little innovation. Our latest project is our house. We designed it from bottom to top and would love to share our process with you. Apart from that we are both software engineers, food enthusiasts and we LOVE traveling. Hope you will enjoy reading the story about our house project.</p>'
             }
         ]
     }

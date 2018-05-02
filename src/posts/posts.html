@@ -3,11 +3,8 @@
 
   <ul id="posts">
     <li repeat.for="post of posts" class="post ${post.postType}" id="${post.id}">
-      <div class="text" if.one-time="['about-text', 'intro-text', 'frame-text', 'quoted-text'].includes(post.postType)"
-           innerHTML.bind="post.scene">
-      </div>
-      <div class="scene" if.one-time="!['about-text', 'intro-text', 'frame-text', 'quoted-text'].includes(post.postType)">
-        ${post.scene}
+      <div class.one-time="post.postType.indexOf('-text') > 1 ? 'text' : 'scene'"
+           innerHTML.bind="post.scene || ''">
       </div>
 
       <div class="textbox ${post.textPosition}" if.one-time="post.header">
@@ -16,4 +13,14 @@
       </div>
     </li>
   </ul>
+  <!--<div class="galleria">
+      <img src="images/blog_kitchen/Reform_Basic_1.jpg">
+      <img src="images/blog_kitchen/Reform_Basic_2.jpg">
+      <img src="images/blog_kitchen/Reform_Basic_3.jpg">
+  </div>
+  <script>
+    (function() { 
+              if (Galleria) { window.alert('Galleria works') }
+    }());
+  </script>-->
 </template>

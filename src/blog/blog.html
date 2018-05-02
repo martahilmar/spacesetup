@@ -1,0 +1,17 @@
+<template>
+    <require from="posts/posts.css"></require>
+    
+    <ul id="posts">
+      <li repeat.for="post of posts" class="post ${post.postType}" id="${post.id}">
+        <div class.one-time="post.postType.indexOf('-text') > 1 ? 'text' : 'scene'"
+             innerHTML.bind="post.scene || ''">
+        </div>
+  
+        <div class="textbox ${post.textPosition}" if.one-time="post.header">
+          <h2>${post.header}</h2>
+          ${post.content}
+        </div>
+      </li>
+    </ul>
+  </template>
+  
