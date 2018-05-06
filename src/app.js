@@ -3,6 +3,10 @@ import { Router, RouterConfiguration, RouteConfig, NavModel } from 'aurelia-rout
 
 @autoinject()
 export class App {
+  constructor() {
+    this.name = 'SpaceSetup';
+  }
+
   configureRouter(config, router) {
     config.title = 'SpaceSetup';
     config.map([
@@ -12,20 +16,6 @@ export class App {
       {route: 'blog_kitchen', name: 'blog_kitchen', moduleId: 'blog/blog_kitchen.html', nav: false}
     ]);
     this.router = router;
-  }
-
-
-  
-  constructor() {
-    this.name = 'SpaceSetup';
-  }
-
-  toggleNav(e) {
-    if (!this.left) {
-      this.left = window.getComputedStyle(document.getElementById('navbar')).left;
-      this.bgColor = window.getComputedStyle(document.querySelector('#navbar .content')).backgroundColor;
-    }
-    this.navClosed = !this.navClosed;
   }
 
   initScrollReveal() {

@@ -1,5 +1,7 @@
 
 $dark_gray: #292929;
+$light_gray1: rgba(85, 85, 85, .4);
+$light_gray2: rgba(136, 136, 136, .6);
 $hover: #444;
 
 /**
@@ -36,64 +38,105 @@ $hover: #444;
 #navbar {
   position: absolute;
   top: 15px;
-  z-index: 100;
-
-  left: -170px;
-  width: 210px;
-  transition: left 250ms ease-out, background-color 500ms ease-out;
+  left: 15px;
   
   .content {
-    opacity: 0;
-    width: 85%;
-    padding: 10px;
-    padding-right: 0;
+    position: absolute;
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
     color: $dark_gray;
-    /*overflow: hidden;*/
-    background-color: rgba(0,0,0,.25);
-    transition: opacity 250ms ease, width 1s ease;
-    margin-top: 60px;
+    background-color: $light_gray2;
+  }
+
+  .content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 280px;
+    height: 360px;
+    backface-visibility: hidden;
+    background-color: $light_gray2;
+    
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: opacity .5s 1s,
+                left .25s .5s,
+                height .25s .5s;
+  }
+
+  .content.closed {
+    width: 40px;
+    height: 4px;
+    margin: 20px;
+    margin-left: 0px;
+
+    opacity: 0;
+    overflow: hidden;
+    background-color: black;
+
+    &::before {
+      left: 200px;
+      height: 0px;
+      width: 0px;
+    }
+  }
+  .content.opened {
+    width: 280px;
+    height: 380px;
+    opacity: 1;
+    margin-top: -15px;
+    margin-right: 20px;
+    background-color: $light_gray1;
+
+    &::before {
+      left: -15px;
+    }
   }
 
   h1 {
     width: 75%;
     margin: 5px;
     padding: 5px;
-    margin-top: 27px;
-    margin-left: 15px;
+    margin-left: 50px;
     color: $hover;
     border-bottom: 1px solid $hover;
     font-family: 'Muli', sans-serif;
   }
-  /*
+
   ul {
-    overflow: hidden;
-  }*/
-  ul li a {
-    display: block;
-    margin: 5px;
-    padding: 5px;
-    color: $dark_gray;
-    transition: color 250ms;
-    user-select: none;
-    font-family: 'Muli', sans-serif;
-    text-decoration: none;
-    font-weight: normal;
-  }
+    position: absolute;
+    line-height: 40px;
+    margin-top: 135px;
+    list-style-type: none;
+    li a {
+      display: block;
+      margin: 5px;
+      padding: 5px;
+      color: white;
+      transition: color 250ms;
+      user-select: none;
+      font-family: 'Muli', sans-serif;
+      text-decoration: none;
+      font-weight: normal;
+      font-size: larger;
+    }
   
-  ul li a:hover {
-    color: $hover;
+    li a:hover {
+      color: $hover;
+    }
   }
 
   a.open-nav,
   a.close-nav {
-    float: right;
+    position: absolute;
+    z-index: 1000;
+
     cursor: pointer;
     padding: 20px;
   }
 
   a .nav-icon {
-    width: 36px;
-    height: 2px;
+    width: 40px;
+    height: 4px;
     position: absolute;
     transform: translate(-50%);
     background-color: $dark_gray !important;
@@ -110,20 +153,20 @@ $hover: #444;
     right: 0;
     width: 100%;
     height: 100%;
-    height: 2px !important;
+    height: 4px !important;
     background-color: inherit;
     backface-visibility: hidden;
     transition: transform 250ms ease;
   }
 
-  a.open-nav .nav-icon::before { transform: translateY(-10px); }
-  a.open-nav .nav-icon::after  {  transform: translateY(10px); }
+  a.open-nav .nav-icon::before { transform: translateY(-15px); }
+  a.open-nav .nav-icon::after  {  transform: translateY(15px); }
 
   a.open-nav:hover .nav-icon { background-color: $hover !important; }
-  a.open-nav:hover .nav-icon::before { transform: translateY(-12px); }
-  a.open-nav:hover .nav-icon::after  { transform: translateY(12px); }
+  a.open-nav:hover .nav-icon::before { transform: translateY(-15px); }
+  a.open-nav:hover .nav-icon::after  { transform: translateY(15px); }
 
-  a.close-nav .nav-icon { background-color: $hover !important; height: 0px; left: 15px; }
+  a.close-nav .nav-icon { background-color: $hover !important; height: 0px; }
   a.close-nav .nav-icon::before { transform: rotate(-45deg); }
   a.close-nav .nav-icon::after  {  transform: rotate(45deg); }
 

@@ -3,11 +3,17 @@
   <!-- TODO: Make it work for aurelia.json
   <require from="font-awesome.css"></require>
   -->
-  <nav>
-    <ul>
-      <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
-        <a href.bind="row.href">${row.title}</a>
-      </li>
-    </ul>
+  <nav id="navbar">
+    <a class.bind="open ? 'close-nav' : 'open-nav'" click.delegate="toggle()">
+      <span class="nav-icon"></span>
+    </a>
+    <div class="content" class.bind="open ? 'opened' : 'closed'" >
+      <!-- <h1>Menu</h1> -->
+      <ul>
+        <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
+          <a href.bind="row.href">${row.title}</a>
+        </li>
+      </ul>
+    </div>
   </nav>
 </template>

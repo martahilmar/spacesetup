@@ -1,7 +1,5 @@
-import $ from 'jquery'
 import anime from 'animejs'
 import ScrollPage from 'page'
-import { Router, RouterConfiguration, RouteConfig, NavModel } from 'aurelia-router';
 
 export class Blog extends ScrollPage {
 
@@ -22,7 +20,7 @@ export class Blog extends ScrollPage {
       id: 'Kitchen',
       postType: 'blog-full-width',
       scene:
-      '<div><a href="/#/blog_kitchen"><img src="images/blog_kitchen/Reform_Basic_2.jpg" style="width: 100%">' +
+      '<div><a href="#/blog_kitchen"><img src="images/blog_kitchen/Reform_Basic_2.jpg" style="width: 100%">' +
       '<h2>KITCHEN DESIGN:' +
       '<br>Our Ikea hacked kitchen' +
       '<br>with beautiful design by Reform</h2>' +
