@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 export class About {
     constructor() {
         console.log("Loading Instagram...");

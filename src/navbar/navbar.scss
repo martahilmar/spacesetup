@@ -14,7 +14,7 @@ $hover: #444;
 
   a.fa {
     width: 25px;
-    border-radius: 50px;
+    border-radius: 100px;
     text-align: center;
 
     font-size: 1.6em;
@@ -166,7 +166,7 @@ $hover: #444;
   a.open-nav:hover .nav-icon::before { transform: translateY(-15px); }
   a.open-nav:hover .nav-icon::after  { transform: translateY(15px); }
 
-  a.close-nav .nav-icon { background-color: $hover !important; height: 0px; }
+  a.close-nav .nav-icon { background-color: $hover !important; height: 0px !important; }
   a.close-nav .nav-icon::before { transform: rotate(-45deg); }
   a.close-nav .nav-icon::after  {  transform: rotate(45deg); }
 
@@ -180,14 +180,31 @@ $hover: #444;
 }
 
 @media only screen and (max-width: 1200px) {
-  #navbar { width: 350px; left: -220px; }
-  #navbar {
-    .content { width: 250px; }
-    a .nav-icon {
-      width: 85px;
-      height: 12px !important;
+  #social-icons {
+    margin-top: 30px;
+    margin-left: 150px;
+
+    a.fa {
+      width: 60px;
+      height: 60px;
+      font-size: 3.5em;
     }
-    ul li a { margin: 10px; }
+  }
+
+  #navbar {
+    a .nav-icon,
+    a .nav-icon::after,
+    a .nav-icon::before,
+    #to-top a .nav-icon::after,
+    #to-top a .nav-icon::before {
+      height: 10px !important;
+      width: 80px;
+    }
+
+    ul li a {
+      margin: 10px;
+      font-size: xx-large;
+    }
     a.open-nav, a.close-nav { padding: 50px; }
     a.open-nav .nav-icon::before { transform: translateY(-26px); }
     a.open-nav .nav-icon::after  {  transform: translateY(26px); }
