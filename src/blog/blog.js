@@ -15,7 +15,7 @@ export class Blog extends ScrollPage {
       postType: 'intro-text',
       scene:
       '<p>Sporadic posts from our house. You will be able to read about a variety of topics, such as interior design, DIY projects, house automation, gardening, every day life in a house, etc.</p>'
-    },/*
+    },
     {
       id: 'Kitchen',
       postType: 'blog-full-width',
@@ -25,7 +25,7 @@ export class Blog extends ScrollPage {
       '<br>Our Ikea hacked kitchen' +
       '<br>with beautiful design by Reform</h2>' +
       '</a></div>'
-    },*/
+    },
     {
       id: 'Footer',
       postType: 'frame-text',
