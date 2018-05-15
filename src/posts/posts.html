@@ -1,5 +1,6 @@
 <template>
   <require from="posts/posts.css"></require>
+  <require from="disqus/disqus"></require>
 
   <ul id="posts">
     <li repeat.for="post of posts" class="post ${post.postType}" id="${post.id}">
@@ -13,6 +14,7 @@
       </div>
     </li>
   </ul>
+  <disqus></disqus>  
   <!--<div class="galleria">
       <img src="images/blog_kitchen/Reform_Basic_1.jpg">
       <img src="images/blog_kitchen/Reform_Basic_2.jpg">
