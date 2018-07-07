@@ -4,7 +4,7 @@ import anime from 'animejs';
 export default class ScrollPage {
   attached() {
     let self = this;
-    window.scenes = $('.post div:first-child');
+    window.scenes = $('.post div.au-target:first-child');
     // TODO: filter/map out onScroll posts (avoid below check)
     this.posts.forEach((post, i) => {
       post.div = window.scenes.eq(i);

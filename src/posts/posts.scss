@@ -415,4 +415,21 @@ ul#posts {
         margin-bottom: -40px;
     }
   }
+  .rotate90 {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    margin-top: 100px;
+    margin-bottom: 150px;
+  }
+
+  .landscapePicture {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);    
+  }
 }
