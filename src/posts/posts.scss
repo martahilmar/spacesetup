@@ -366,6 +366,59 @@ ul#posts {
       text-align: justify;
       font-size: 1.15em;
     }
+
+    p.copyright {
+      margin: 0;
+      text-align: justify;
+      font-size: 0.8em;
+      font-style: italic;
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+    
+    .quoted-text {
+      background: #f3f3f3;
+      font-size: 1.7em;
+      color: rgb(61, 61, 61);
+      padding: 10px 0px 10px;
+      margin: 125px auto;
+      min-height: initial !important;
+      font-family: 'Playfair Display';
+  
+      quot {
+          font-size: 5.5em;
+          color: rgb(177, 177, 177);
+          text-align: center;
+      }
+  
+      p {
+          line-height: 40px;
+  
+          i /* Quotes */ {
+              font-size: 1.6em;
+              font-weight: normal;
+          }
+          span /* Text */ {
+              margin: 10px;
+          }
+      }
+      p.center {
+          text-align: center;
+          margin-bottom: -40px;
+      }
+      p.right {
+          text-align: right;
+          margin-left: 300px;
+          margin-bottom: -40px;
+      }
+      p.left {
+          text-align: left;
+          margin-right: 400px;
+          margin-bottom: -40px;
+      }
+    }
   }
 
   .post.full-width .scene {
@@ -374,6 +427,7 @@ ul#posts {
     justify-content: center;
   }
 
+<<<<<<< HEAD
   .quoted-text {
     background: #f3f3f3;
     font-size: 1.7em;
@@ -432,4 +486,7 @@ ul#posts {
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);    
   }
+=======
+  
+>>>>>>> e4267ebfeb82019357f1c6cc8bc74f47463a857a
 }
